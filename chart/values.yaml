@@ -1,0 +1,7 @@
+# 
+---
+namespace: krateocon-app-ns
+image: ghcr.io/krateoplatformops/krateocon-app:latest
+replicas: 3
+name: krateocon-app
+host: krateocon-app.krateoplatformops.io

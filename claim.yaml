@@ -1,0 +1,59 @@
+apiVersion: templates.krateo.io/v1alpha1
+kind: FireworksApp
+metadata:
+  labels:
+    deploymentId: 62cd68bf758d6c9dd2229e8d
+  name: krateocon-app-fireworksapp
+spec:
+  _values: '{"name":"krateocon-app","description":"Cause baby, you''re a firework.
+    Come on, show ''em what you''re worth","namespace":"krateocon","replicas":"3","host":"krateocon-app.krateoplatformops.io","provider":"github.com","organizationName":"krateoplatformops","repositoryName":"krateocon-app","owner":"guest","domain":"github.com","schema":"https","apiUrl":"https://api.github.com","deploymentId":"62cd68bf758d6c9dd2229e8d"}'
+  dashboard:
+    description: Cause baby, you're a firework. Come on, show 'em what you're worth
+    icon: fa-solid fa-fire
+    links:
+    - icon: fa-brands fa-git
+      title: krateoplatformops/krateocon-app
+      url: https://github.com/krateoplatformops/krateocon-app
+    owner: guest
+    plugins:
+    - endpointName: argocd
+      icon: fa-solid fa-diagram-project
+      name: resources
+      type: argocd
+      value: krateocon-app-fireworksapp
+    - endpointName: github.com
+      icon: fa-solid fa-book
+      name: documentation
+      type: doc
+      values:
+      - README.md
+    - icon: fa-brands fa-docker
+      name: kubernetes
+      type: kubernetes
+      value: deploymentId=62cd68bf758d6c9dd2229e8d
+    - endpointName: github.com
+      icon: fa-solid fa-person-running
+      name: pipelines
+      type: pipeline
+      values:
+      - Build Docker image for every commit
+    tags:
+    - fireworks
+    - template
+    - krateo
+    - katy perry
+  fromRepo:
+    apiUrl: https://api.github.com/
+    domain: github.com
+    organizationName: krateoplatformops
+    provider: github
+    repositoryName: krateo-template-fireworksapp
+    schema: https
+  namespace: krateocon
+  toRepo:
+    apiUrl: https://api.github.com
+    domain: github.com
+    organizationName: krateoplatformops
+    provider: github.com
+    repositoryName: krateocon-app
+    schema: https
